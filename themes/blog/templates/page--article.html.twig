@@ -1,0 +1,106 @@
+<header class="header" role="banner">
+	<div class="header-top">
+		{% if page.header_top %}					
+					{{ page.header_top }}        
+		{% endif %}  
+	</div>
+	<div class="header-nav container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+				<i class="fa fa-bars"></i>
+			</button>
+
+			{% if page.site_branding %}
+			<h1 class="logo">											
+					{{ page.site_branding }}			  
+			</h1>
+			{% endif %}
+		</div>
+		<div class="navbar-search">
+			<div class="search-icons">
+				<a class="open-form"><i class="fa fa-search"></i></a>
+				<a class="close-form"><i class="fa fa-times"></i></a>
+			</div>
+
+			<div class="region region-header-search">
+				<div class="search-block-form block" id="block-octo-search" role="search">
+
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+						<div class="form-item form-type-search form-item-keys form-no-label">
+							<input title="Enter the terms you wish to search for." class="search form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128">
+						</div>
+						<div class="form-actions form-wrapper" id="edit-actions">
+							<input type="submit" id="edit-submit" name="" value="Search" class="button form-submit">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+		{% if page.header %}					
+			{{ page.header }}        
+		{% endif %} 
+	</div>
+</header>
+<main role="main" class="main">
+	{% if current_page_title %}
+	<section class="page-top">
+		<div class="container">
+			<h1>{{ current_page_title}}</h1>
+		</div>
+	</section>
+	{% endif %}
+	{% if page.help %}					
+		{{ page.help }}        
+	{% endif %} 
+	<div id="content" class="content full">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<article role="article" class="landing">
+						<div class="row">
+							<div class="col-md-6 featured-image">							
+							{% if node.field_image %}
+								<img alt="Home office" src="{{ file_url(node.field_image.entity.fileuri) }}">
+							{% endif %}
+							</div>
+							<div class="col-md-6 introduction">
+								{% if node.body.value|raw %}
+									<p>{{ node.body.value|raw }}</p>          
+								{% endif %}
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+{% if page.our_team %}		
+	<div class="region region-after-content">
+		<div class="container">
+			<div class="team block">				
+				{{ page.our_team }}    				
+			</div>
+		</div>
+	</div>
+{% endif %}		
+</main>
+<footer id="footer" role="contentinfo">
+	<div class="container main-footer">
+	{% if page.footer_first %}
+		<div class="row">			
+            {{ page.footer_first }}        
+		</div>
+	{% endif %}
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+	{% if page.footer_second %}
+		<div class="row">			
+            {{ page.footer_second }}        
+		</div>
+	{% endif %}
+		</div>
+	</div>
+</footer>

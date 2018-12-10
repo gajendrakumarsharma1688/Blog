@@ -1,0 +1,131 @@
+<header class="header" role="banner">
+	<div class="header-top">
+		{% if page.header_top %}					
+					{{ page.header_top }}        
+		{% endif %}  
+	</div>
+	<div class="header-nav container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+				<i class="fa fa-bars"></i>
+			</button>
+
+			{% if page.site_branding %}
+			<h1 class="logo">											
+					{{ page.site_branding }}			  
+			</h1>
+			{% endif %}
+		</div>
+		<div class="navbar-search">
+			<div class="search-icons">
+				<a class="open-form"><i class="fa fa-search"></i></a>
+				<a class="close-form"><i class="fa fa-times"></i></a>
+			</div>
+
+			<div class="region region-header-search">
+				<div class="search-block-form block" id="block-octo-search" role="search">
+
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+						<div class="form-item form-type-search form-item-keys form-no-label">
+							<input title="Enter the terms you wish to search for." class="search form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128">
+						</div>
+						<div class="form-actions form-wrapper" id="edit-actions">
+							<input type="submit" id="edit-submit" name="" value="Search" class="button form-submit">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+		{% if page.header %}					
+			{{ page.header }}        
+		{% endif %} 
+	</div>
+</header>
+
+<main role="main" class="main">
+	{% if current_page_title %}
+	<section class="page-top">
+		<div class="container">
+			<h1>{{ current_page_title}}</h1>
+		</div>
+	</section>
+	{% endif %}
+	{% if page.help %}					
+		{{ page.help }}        
+	{% endif %} 
+ 
+ <div id="content" class="content full">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					{% if page.content_top %}					
+						{{ page.content_top }}        
+					{% endif %} 
+				</div>
+				<aside class="layout-sidebar-second" role="complementary">
+					<div class="col-md-3">
+						<div class="block">
+						{% if page.blog_categories %}
+							<h4>Categories</h4>
+							<ul class="nav nav-list primary pull-bottom">
+								{{ page.blog_categories }} 
+							</ul>
+						{% endif %}
+						</div>
+						<div class="block">
+							<div class="tabs">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#popularPosts" data-toggle="tab"><i class="fa fa-star"></i> Popular</a></li>
+									<li><a href="#recentPosts" data-toggle="tab">Recent</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="popularPosts">
+										<ul class="simple-post-list">
+										{% if page.blog_popular %}					
+											{{ page.blog_popular }}        
+										{% endif %} 
+										</ul>
+									</div>
+									<div class="tab-pane" id="recentPosts">
+										<ul class="simple-post-list">
+											{% if page.blog_recent %}					
+												{{ page.blog_recent }}        
+											{% endif %}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% if page.sidebar_second %}			
+						<div class="block ">							
+							{{ page.sidebar_second }}        
+						</div>
+						{% endif %}
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div> 
+ 
+ </main>
+
+<footer id="footer" role="contentinfo">
+	<div class="container main-footer">
+	{% if page.footer_first %}
+		<div class="row">			
+            {{ page.footer_first }}        
+		</div>
+	{% endif %}
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+	{% if page.footer_second %}
+		<div class="row">			
+            {{ page.footer_second }}        
+		</div>
+	{% endif %}
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,7 @@
+Step 1: $ git clone https://github.com/gajendrakumarsharma1688/blog.git
+
+step 2: Create database like "blog_assessment", database path: [root/blog_assessment.sql]
+
+step 3. import database in mysql phpmyadmin or database import command.
+
+Step 4. configure Database metadata in settings.php file, path: [root/sites/default] 

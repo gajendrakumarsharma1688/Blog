@@ -1,0 +1,34 @@
+global-css:
+  version: VERSION
+  css:
+    theme:
+     includes/font-awesome/css/font-awesome.min.css: {}
+     includes/flexslider/css/flexslider.css: {}
+     css/style.css: {}
+  js:
+    js/octo.js: {}
+    includes/flexslider/jquery.flexslider.js: {}
+    includes/flexslider/jquery.flexslider-min.js: {}
+    includes/owl-carousel/owl.carousel.min.js: {}
+    includes/jquery-scrollTo/jquery.scrollTo.min.js: {}
+    includes/jquery-gmap/jquery.gmap.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+bootstrap-lib:
+  version: 1.x
+  css:
+    theme:
+      includes/bootstrap/css/bootstrap.min.css: {}
+  js:
+    includes/bootstrap/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
